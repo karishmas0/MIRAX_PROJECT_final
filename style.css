@@ -1,0 +1,780 @@
+/* --- Global Body Styles --- */
+body {
+    background: linear-gradient(135deg, #e3f2fd 0%, #d9dee3 100%);
+    
+    /* 2. Full Screen Height */
+    /* "min-height: 100vh" ensures the background covers the whole phone screen */
+    min-height: 100vh;
+    width: 100%;
+    
+    /* 3. Perfect Centering */
+    /* This uses Flexbox to keep your "CanteenGo" box in the middle */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Starts content at the top */
+    
+    /* 4. Professional Typography */
+    /* Using a clean sans-serif font makes it look like a modern app */
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    
+    /* 5. Clean Edges */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents awkward side-scrolling on mobile */
+}
+/* --- Styling the Hero Box --- */
+
+
+/*login system*/
+
+.login-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dark background */
+    backdrop-filter: blur(5px); /* Background blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Sabse upar dikhega */
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #e03d4e; /* Zomato Red */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Jab login ho jaye toh is class ko hide karne ke liye */
+.hidden {
+    display: none !important;
+}
+/*to skip*/
+.skip-container {
+    margin-top: 15px;
+}
+
+.skip-btn {
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.skip-btn:hover {
+    color: #e03d4e; /* Hover karne par Zomato Red ho jayega */
+}
+
+/*profile*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: white;
+    position: sticky; /* Yeh page ke saath move karega */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-logo {
+    font-weight: 900;
+    font-size: 24px;
+    color: #e03d4e; /* Zomato Red */
+    letter-spacing: 1px;
+}
+
+.nav-profile-btn {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.nav-profile-btn:hover {
+    background: #f0f0f0;
+    border-color: #bbb;
+}
+
+.profile-text {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* top box --- the most top box canttengo*/
+.canteen-hero-box {
+    /* 1. Creating the "Glass" Effect (from image_2.png) */
+    background-color: rgba(204, 138, 138, 0.7); /* White with 70% transparency */
+    width: 90%;                 /* Takes up 90% of phone width */
+    max-width: 2000px;           /* Prevents it from getting too large on laptops */
+    margin: 100px auto;         /* Positions the box in the middle of the page */
+    padding: 60px 20px;
+    border-radius: 15px;
+    text-align: center;         /* Centers all text inside */
+    box-shadow: 0 10px 25px rgba(13, 13, 13, 0.1); /* Soft shadow for depth */
+
+    /* 2. LAYOUT: Stacking content vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* Perfect centering across the axis */
+    justify-content: center;    /* Perfect centering up/down */
+}
+
+/* --- The Typography (The "Same to Same" Look) --- */
+
+
+/*Canteengo logo*/
+.canteen-logo {
+    /* High-contrast serif font to match Special Menu (image_4.png) */
+    font-family: 'Playfair Display', serif; /* MUST link this in HTML */
+    font-weight: 900;
+    font-size: 50px;
+    color: #080707;            /* A deep, nearly black text color */
+    text-transform: uppercase;
+    letter-spacing: -2px;       /* Letters are tightly packed like photo */
+    line-height: 1;
+    margin-bottom: 5px;
+}
+/*canteengo hero box-- canteen go quate*/
+.hero-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 80%;            /* Keeps the quote on two lines, if needed */
+}
+/*scroll down*/
+.scroll-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;              /* Space between text and arrow */
+    text-decoration: none;
+    color: rgb(39, 9, 9);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;      /* Keeps the font thin and clean */
+    
+    /* Positioning it at the very bottom of your hero box */
+    margin-top: auto;      
+    padding-bottom: 20px;
+}
+
+/* Optional: Add a subtle bounce animation to the arrow ----- for arrow*/
+.scroll-link span {
+    font-size: 22px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-5px);}
+    60% {transform: translateY(-3px);}
+}
+
+/*scroll button work here*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*below scroll here*/
+/* --- STATS SECTION --- */
+.stats-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0auto;
+
+    padding: 50px 20px;
+    background-color: #ccd0e7; /* Clean white background */
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.stats-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Makes it look good on mobile */
+    max-width: 8000px;
+    margin: 0 auto;
+}
+/* happy students, food items , fast service*/
+.stat-box {
+    background: #f4f3f3;
+    padding: 3px;
+    border-radius: 15px;
+    min-width: 200px;
+    /* Soft shadow to make it look "premium" */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #3c1919;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.stat-number {
+    display: block;
+    font-size: 42px;
+    font-weight: 800;
+    color: #4a050c; /* Using your Zomato Red theme */
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mobile View Fix */
+@media (max-width: 600px) {
+    .stats-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*Second part*/
+/* --- SECTION 3: MISSION STYLES --- */
+
+.mission-container {
+    background-color: rgb(250, 247, 247);
+    width: 100%;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Allows images to float around the text */
+    text-align: center;
+}
+
+.mission-content {
+    max-width: 600px;
+    z-index: 2; /* Keeps text on top of everything */
+}
+
+.mission-title {
+    color: #e03d4e; /* Zomato-style Red */
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+.mission-description {
+    font-size: 18px;
+    color: #585858;
+    line-height: 1.6;
+}
+
+/* Floating Images Styling */
+.floating-img {
+    position: absolute;
+    width: 150px; /* Adjust based on your images */
+    height: auto;
+    opacity: 0.9;
+}
+
+.img-left {
+    left: 10%;
+    top: 20%;
+}
+
+.img-right {
+    right: 10%;
+    bottom: 20%;
+}
+
+/* On mobile, we hide the floating images so it doesn't look cluttered */
+@media (max-width: 768px) {
+    .floating-img {
+        display: none;
+    }
+    .mission-title {
+        font-size: 32px;
+    }
+}
+
+/*search bar*/
+/* --- SEARCH BAR STYLES --- */
+/* Pure search section ko center mein alignment dene ke liye */
+.search-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 15px 0; /* Top aur bottom se clean spacing */
+}
+
+/* Main Pill-Shaped Background Wrapper */
+.search-wrapper {
+    background-color: white;
+    width: 90%;
+    max-width: 650px;      /* Desktop par zyada wide nahi hoga */
+    display: flex;
+    align-items: center;
+    padding: 6px 10px 6px 20px; /* Right side kam padding taaki button fit baithe */
+    border-radius: 50px;   /* Perfect curved corners like Zomato/Swiggy */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft professional shadow */
+    border: 1px solid #e8e8e8; /* Light premium border */
+}
+
+/* Search Icon Styling */
+.search-icon {
+    font-size: 18px;
+    color: #666;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Actual Text Input Box (Purani styling remove karne ke liye) */
+.main-search {
+    flex: 1;               /* Bachi hui poori space text box le lega */
+    border: none;          /* Default browser border khatam */
+    outline: none;         /* Click karne par aane wala black/blue border remove */
+    font-size: 16px;
+    padding: 12px;
+    color: #1c1c1c;
+    background: transparent;
+}
+
+/* Input ke andar ke placeholder text ka color */
+.main-search::placeholder {
+    color: #9c9c9c;
+}
+
+/* Beautiful Rounded Search Button */
+.search-btn {
+    background-color: #e03d4e; /* Premium Zomato Red */
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;   /* Pill shape button matching the wrapper */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.search-btn:hover {
+    background-color: #cb2f3e; /* Hover karne par thoda dark red */
+    box-shadow: 0 4px 10px rgba(224, 61, 78, 0.2); /* Soft red glow */
+}
+
+
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 15px 5%;
+}
+
+/* Classic Food Card like your screenshot */
+.classic-food-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.classic-card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.classic-card-info {
+    padding: 12px;
+}
+
+.classic-card-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: bold;
+}
+
+.classic-card-price {
+    color: #e03d4e;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 5px 0 10px 0;
+}
+
+.classic-add-btn {
+    width: 100%;
+    background: #e03d4e;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Utilities */
+.hidden-layout {
+    display: none !important;
+}
+
+/* --- FOOD GRID SECTION --- */
+
+.grid-container {
+    display: grid;
+    /* Creates 2 equal columns */
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto; /* Centers the grid */
+    padding: 0;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    border-radius: 18px; /* Rounded corners like your screenshot */
+    overflow: hidden;    /* Clips the image to the rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Effect: The box lifts up when you hover over it */
+.grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    border-color: #e03d4e; /* Changes border to red on hover */
+}
+
+/* --- THE IMAGE STYLING --- */
+.food-img {
+    width: 100%;
+    height: 180px;      /* Consistent height for all food items */
+    object-fit: cover;  /* Magic property: crops the photo to fit perfectly */
+    border-bottom: 1px solid #eee;
+}
+
+/* --- TEXT STYLING --- */
+.food-name {
+    font-size: 22px;
+    color: #e03d4e;     /* Zomato Red */
+    margin: 15px 0 5px 0;
+    font-family: 'Arial', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.food-desc {
+    font-size: 14px;
+    color: #666;
+    padding: 0 15px 20px 15px; /* Adds space inside the box */
+    margin: 0;
+}
+
+/* --- RESPONSIVE DESIGN: Mobile View --- */
+@media (max-width: 600px) {
+    .grid-container {
+        /* On small phones, use 1 column so the images are bigger */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .food-img {
+        height: 200px; /* Taller images on mobile look better */
+    }
+}
+
+/*card page*/
+/* Cart Main Wrapper */
+.cart-page-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background-color: #f7f9fc;
+    z-index: 99999; /* Hamesha sabse upar layer */
+    overflow-y: auto;
+    padding-bottom: 100px; /* Space for the bottom sticky bar */
+    box-sizing: border-box;
+}
+
+.cart-header {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.back-to-menu-btn {
+    background: transparent; border: none;
+    color: #e03d4e; font-weight: bold; cursor: pointer; font-size: 16px;
+}
+
+.cart-main-content {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.cart-box {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* Individual added item layout row */
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item-row:last-child { border: none; }
+
+/* Recommendations Horizontal Scroll bar setup */
+.recommendations-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.rec-item {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 140px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.rec-item img {
+    width: 100%; height: 80px;
+    object-fit: cover; border-radius: 8px;
+}
+
+.rec-item h4 { font-size: 13px; margin: 8px 0 4px 0; color: #333; }
+.rec-item p { font-size: 12px; color: #e03d4e; font-weight: bold; margin: 0 0 8px 0; }
+.rec-item button { background: white; border: 1px solid #e03d4e; color: #e03d4e; border-radius: 5px; padding: 4px 12px; cursor: pointer; font-weight: bold; }
+
+/* Bottom Sticky Order Placement Footer Box */
+.cart-sticky-footer {
+    position: fixed;
+    bottom: 0; left: 0; width: 100%;
+    background: white;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-sizing: border-box;
+}
+
+.footer-total { display: flex; flex-direction: column; text-align: left;}
+.total-heading { font-size: 11px; color: #666; font-weight: bold; }
+.total-amount { font-size: 20px; color: #222; font-weight: 800; }
+
+.place-order-btn {
+    background: #e03d4e; color: white;
+    border: none; padding: 14px 35px;
+    font-size: 16px; font-weight: bold;
+    border-radius: 10px; cursor: pointer;
+}
+
+.add-more-text-btn { background: none; border: none; color: #e03d4e; cursor: pointer; font-weight: bold; margin-top: 10px; }
+
+/* Global visibility helper class */
+.hidden-layout { display: none !important; }
+
+
+
+/* Modal Background */
+.modal {
+    display: none; /* Pehle se hidden rahega */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Background thoda kala ho jayega */
+}
+
+/* Modal ka main dabba */
+.modal-content {
+    background-color: rgb(245, 234, 235);
+    margin: 5% auto; 
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    
+    /* YEH DO LINES IMPORTANT HAIN */
+    max-height: 80vh;       /* Screen ki 80% height se zyada bada nahi hoga */
+    overflow-y: auto;      /* Agar items zyada hain toh scrollbar aa jayega */
+    
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+.variety-img {
+    width: 100%;         /* Box ki puri chaudai lega */
+    height: 180px;       /* Ek fixed height (aap 150px ya 200px bhi kar sakte hain) */
+    object-fit: cover;   /* Image stretch nahi hogi, perfectly crop ho kar fit hogi */
+    border-radius: 10px; /* Corners ko thoda round karne ke liye */
+    margin-bottom: 10px;
+}
+
+/* 10 items ko line mein lane ke liye */
+.variety-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Do columns banata hai */
+    gap: 15px;
+    margin-top: 20px;
+    padding-bottom: 20px; /* Neeche thodi jagah */
+}
+
+/* Variety card design */
+.variety-item {
+    background: #dfe0cf;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #bbb5b5;
+    text-align: left; /* Text side mein rahega toh sundar dikhega */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Mobile ke liye (Jab screen choti ho) */
+@media (max-width: 480px) {
+    .variety-grid {
+        grid-template-columns: 1fr; /* Ek column kar dega taaki saaf dikhe */
+    }
+}
+
+
+/* Bottom Floating Bar Design */
+.bottom-cart-strip {
+    position: fixed;
+    bottom: 20px; /* Screen ke bottom se thoda upar gap */
+    left: 50%;
+    transform: translateX(-50%); /* Center align karne ke liye */
+    width: 90%;
+    max-width: 600px;
+    background-color: #e03d4e; /* Zomato Premium Red */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(224, 61, 78, 0.3);
+    z-index: 10000; /* Sabse upar dikhega */
+    transition: all 0.4s ease-in-out;
+}
+
+/* Flexbox layout for internal items */
+.cart-strip-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-strip-left {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* View Cart Button Styling */
+.view-cart-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-cart-btn .arrow {
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.view-cart-btn:hover .arrow {
+    transform: translateX(4px); /* Hover karne par arrow thoda slide hoga */
+}
+
+/* Hidden State Rule */
+.hidden-cart {
+    bottom: -100px !important; /* Screen ke bahar niche chup jayega */
+    opacity: 0;
+    pointer-events: none;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!--information tag-te3ll us how brower data is handled , character set(letters,symbols,emojis),standard coding system-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CanteenGo | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--login system-->
+    <div id="login-overlay" class="login-overlay"><!--id for javascript and class for CSS-->
+        <div class="login-box">
+            <h2>CanteenGo Login</h2>
+            <p>Enter your details to start ordering</p>
+        
+            <input type="email" id="userEmail" placeholder="College Email ID">
+            <input type="text" id="roomNo" placeholder="Hostel Room No.">
+            <input type="text" id="rollNo" placeholder="Roll Number">
+        
+            <button class="login-btn" onclick="handleLogin()">Login Now</button>
+        
+            <div class="skip-container">
+                <button class="skip-btn" onclick="skipLogin()">Skip for now &rarr;</button><!--&rarr show the arrow in skip (->)-->
+            </div>
+        
+             <p id="loginError" style="color: red; display: none; margin-top: 10px;">Please fill all details!</p>
+        </div>
+    </div>
+
+    <!--profile page -->
+    <nav class="navbar">
+        <div class="nav-logo">CANTEENGO</div>
+        <div class="nav-profile">
+            <button class="nav-profile-btn" onclick="toggleProfile()">
+                <span class="user-emoji">👤</span> <!--to make in one line in a box-->
+                <span class="profile-text">My Profile</span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="profile-card" class="profile-card hidden">
+        <div class="profile-content">
+            <span class="close-profile" onclick="toggleProfile()">&times;</span><!--&times show the cross button-->
+            <h3>User Profile</h3>
+            <hr>
+        
+            <div id="profile-logged-in" class="hidden">
+                <p><strong>📧 Email:</strong> <span id="disp-email"></span></p><!--strong for BOLD TEXT  and disp-email for email that student entered-->
+                <p><strong>🏠 Room:</strong> <span id="disp-room"></span></p>
+                <p><strong>🆔 Roll:</strong> <span id="disp-roll"></span></p>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+
+            <div id="profile-guest">
+                <p>You are browsing as a Guest.</p>
+                <button class="login-trigger-btn" onclick="showLoginFromProfile()">Login Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!--my top page-->
+    <div class="canteen-hero-box">
+        <h1 class="canteen-logo">CANTEENGO</h1>
+        <div class="divider"></div>
+        <h2 class="hero-quote">Fresh canteen meals, ready when you are.</h2>
+        
+        <a href="#stats-section" class="scroll-link">
+            Scroll down <span>↓</span>
+        </a>
+    </div>
+
+    
+    <!--WHERE MY SCROLL DOWM LEND-->
+    <section id="stats-section" class="stats-container">
+        <h2 class="stats-heading">OUR CANTEEN STATS</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-number">2000+</span>
+                <p class="stat-label">Happy Students</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">50+</span>
+                <p class="stat-label">Food Items</p>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">24/7</span>
+                <p class="stat-label">Fast Service</p>
+            </div>
+        </div>
+    </section>
+    
+    <!--above the search bar  quate -->
+    <div class="mission-container">
+        <div class="mission-content">
+            <h2 class="mission-title">Better food for <br> more people</h2>
+            <p class="mission-description">
+                For over a decade, we’ve enabled our customers to discover new tastes, 
+                delivered right to their doorstep.
+            </p>
+        </div>
+    </div>
+    
+    <!--for search bar-->
+    <!--<div class="search-section">
+        <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="foodSearch" placeholder="Search for Biryani, Chicken, or Desserts..." class="main-search">
+            <button class="search-btn" onclick="filterFood()">Search</button>
+
+            <div id="searchResults" class="search-results-dropdown"></div>
+        </div>
+    </div>-->
+    
+    <div class="search-section">
+        <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="foodSearch" placeholder="Search for Biryani, Chicken..." class="main-search" autocomplete="off">
+            <button class="search-btn" onclick="filterFood()">Search</button>
+        </div>
+    </div>
+
+    <div id="homepage-content">
+        <div class="promo-banner">.....</div>
+    </div>
+
+    <div class="grid-container" id="mainGrid">
+    </div><!--automatic line se row aur columns mein bitha dena-->
+
+    <!--for different food iteams-->
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="https://pics.craiyon.com/2023-07-08/b33f3ecbb22249eb828b3b83baeeada4.webp" alt="chicken Biryani" class="food-img">
+            <h3 class="food-name"> chicken Biryani</h3>
+            <p class="food-desc">Hyderabadi & Lucknowi Styles</p>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://madscookhouse.com/wp-content/uploads/2021/02/Chicken-Kathi-Roll.jpg" alt="Rolls" class="food-img">
+            <h3 class="food-name">Rolls</h3>
+            <p class="food-desc">Kathi & Spring Rolls</p>
+        </div>
+        
+        <div class="grid-item">
+            <img src="https://cdn.pixabay.com/photo/2024/01/19/12/16/chicken-8518910_1280.jpg" alt="Chicken" class="food-img">
+            <h3 class="food-name">Chicken</h3>
+            <p class="food-desc">Spicy, Grilled & Authentic Flavors</p> 
+        </div>
+
+        <div class="grid-item">
+            <img src="https://img.freepik.com/premium-photo/delicious-paneer-butter-masala-photography_928503-851.jpg?w=2000" alt="Paneer" class="food-img">
+            <h3 class="food-name">Paneer</h3>
+            <p class="food-desc">Fresh Cottage Cheese Dishes</p>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://static.toiimg.com/photo/msid-69345118/69345118.jpg?230449" alt="Dessert" class="food-img">
+            <h3 class="food-name">Desserts</h3>
+            <p class="food-desc">Sweet endings to your meal</p>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://addapinch.com/wp-content/uploads/2019/09/how-to-cook-white-rice-recipe-2669.jpg" alt="Rice" class="food-img">
+            <h3 class="food-name">Rice</h3>
+            <!-- Changed description to fit the food item -->
+            <p class="food-desc">Steamed Basmati & Fried Rice</p>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://images.alphacoders.com/130/1308370.jpg" alt="Pasta" class="food-img">
+            <h3 class="food-name">Pasta</h3>
+            <!-- Fixed the description below -->
+            <p class="food-desc">Creamy Italian & Red Sauce Pasta</p> 
+        </div>
+
+        <div class="grid-item">
+            <img src="https://i.ytimg.com/vi/Do7ZdUodDdw/maxresdefault.jpg" alt="Veg biryani" class="food-img">
+            <h3 class="food-name">Veg Biryani</h3>
+            <p class="food-desc">Aromatic Basmati Rice with Fresh Vegetables</p>
+        </div>
+
+        <div class="grid-item">
+           <img src="https://tse1.mm.bing.net/th/id/OIP.Vy-eiN0Er9BEV3VuAJSGoQHaF7?pid=Api&P=0&h=180" alt="Starters" class="food-img">
+           <h3 class="food-name">Starters</h3>
+           <!-- Fixed description: Starters are for the beginning of the meal, not the end! -->
+           <p class="food-desc">Crispy Bites & Tasty Appetizers to start your meal</p>
+        </div>
+
+        <div class="grid-item">
+            <img src="https://tastythriftytimely.com/wp-content/uploads/2025/06/Chapati-6.jpg" alt="Chapati" class="food-img">
+            <h3 class="food-name">Chapati</h3>
+            <p class="food-desc">Fresh, Soft & Whole Wheat Handmade Rotis</p>
+        </div>
+
+    </div>
+
+    
+
+    <!--ineer items -->
+    <div id="foodModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Food Varieties</h2>
+            <div id="varietyList" class="variety-grid">
+            </div>
+        </div>
+    </div>
+    
+
+    <!--how much items are added === view card-->
+    <div id="bottom-cart-strip" class="bottom-cart-strip hidden-cart">
+        <div class="cart-strip-content">
+            <div class="cart-strip-left">
+                <span id="cart-item-count">1</span> item added
+            </div>
+            <button class="view-cart-btn" onclick="openCartPage()">
+            View Cart <span class="arrow">&rarr;</span>
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <!--to work the card-->
+    <div id="cart-page" class="cart-page-container hidden-layout">
+    
+        <div class="cart-header">
+            <button class="back-to-menu-btn" onclick="goBackToMenu()">&larr; Back to Menu</button><!--return arrow or back to the page (<-)-->
+            <h2>My Tray / Cart</h2>
+        </div>
+
+        <div class="cart-main-content">
+        
+            <div class="cart-box">
+                <h3>Selected Items</h3>
+                <div id="cart-items-list">
+                </div>
+            
+                <button class="add-more-text-btn" onclick="goBackToMenu()">+ Add more items</button>
+            </div>
+
+            <div class="cart-box">
+                <h3>Complete your meal with</h3>
+                <div class="recommendations-scroll">
+                    <div class="rec-item">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400" alt="Mojito">
+                        <h4>Blue Lagoon Mojito</h4>
+                        <p>₹190</p>
+                        <button onclick="addRecommendation('Blue Lagoon Mojito', 190)">+ Add</button>
+                    </div>
+                    <div class="rec-item">
+                        <img src="https://www.jocooks.com/wp-content/uploads/2020/03/pickled-onions-1-9.jpg">
+                        <h4>Picked Red Onions</h4>
+                        <p>₹20</p>
+                        <button onclick="addRecommendation('Picked red Onions', 20)">+ Add</button>
+                    </div>
+                    <div class="rec-item">
+                        <img src="https://gunjanchopra.com/content/images/2022/08/FI-2.jpg">
+                        <h4>Sweet Line Soda</h4>
+                        <p>₹30</p>
+                        <button onclick="addRecommendation('Sweet Line Soda', 30)">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cart-sticky-footer">
+            <div class="footer-total">
+                <span class="total-heading">TOTAL</span>
+                <span id="cart-grand-total" class="total-amount">₹0</span>
+            </div>
+            <button class="place-order-btn" onclick="triggerPlaceOrder()">
+            Place Order &nbsp;&rarr;
+            </button>
+        </div>
+
+    </div>
+
+
+    
+    <!--connent my javascript -->
+    <script src="javas.js"></script>
+</body>
+</html>
