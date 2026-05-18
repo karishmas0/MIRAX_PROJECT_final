@@ -8,7 +8,7 @@ This project operates completely as a **Single Page Application (SPA)** architec
 
 ## 🚀 Live Deployment
 The application is fully compiled and hosted online via GitHub Pages. You can access the live system here:
-👉 **[Launch CanteenGo Web App](https://karishmas0.github.io/MIRAX_PROJECT/)**
+👉 **[Launch CanteenGo Web App]( https://karishmas0.github.io/MIRAX_PROJECT_final/)**
 
 ---
 
